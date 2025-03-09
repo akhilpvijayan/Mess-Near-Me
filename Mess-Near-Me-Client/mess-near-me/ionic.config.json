@@ -1,0 +1,7 @@
+{
+  "name": "mess-near-me",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

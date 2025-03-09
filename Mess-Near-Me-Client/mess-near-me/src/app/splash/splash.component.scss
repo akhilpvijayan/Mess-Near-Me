@@ -1,0 +1,106 @@
+.splash-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  background: url('/assets/Untitled design (7).png') no-repeat center center;
+  background-size: cover; /* Ensures the full image is visible without cropping */
+  background-position: center;
+  background-color: black; /* Adds a background color if the image doesn’t fully cover */
+}
+
+/* Dark overlay for better text readability */
+.overlay {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+/* Content container */
+.splash-content {
+  position: absolute;
+  bottom: 20%;
+  left: 5%;
+  color: white;
+  z-index: 1;
+}
+
+.splash-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-style: italic;
+  line-height: 1.2;
+}
+
+/* Title styling */
+.welcome {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-style: italic;
+  line-height: 1.2;
+}
+
+.highlight {
+  display: inline-block;
+  font-weight: bold;
+  color: #ffcc00; /* Food-related warm color */
+}
+
+.highlight span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Delay for each letter */
+.highlight span:nth-child(1) { animation-delay: 0s; }
+.highlight span:nth-child(2) { animation-delay: 0.1s; }
+.highlight span:nth-child(3) { animation-delay: 0.2s; }
+.highlight span:nth-child(4) { animation-delay: 0.3s; }
+.highlight span:nth-child(5) { animation-delay: 0.4s; }
+.highlight span:nth-child(6) { animation-delay: 0.5s; }
+.highlight span:nth-child(7) { animation-delay: 0.6s; }
+.highlight span:nth-child(8) { animation-delay: 0.7s; }
+.highlight span:nth-child(9) { animation-delay: 0.8s; }
+.highlight span:nth-child(10) { animation-delay: 0.9s; }
+
+/* Subtitle */
+.splash-subtitle {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-top: 5px;
+}
+
+.splash-buttons {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  right: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.continue{
+  width: 99%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #ed2b0d;
+  font-size: 17px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
