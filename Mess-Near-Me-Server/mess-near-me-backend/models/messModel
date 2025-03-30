@@ -1,0 +1,104 @@
+const mongoose = require('mongoose');
+
+const messSchema = new mongoose.Schema({
+  messName: { type: String, required: true },
+  owner: {
+    name: { type: String, required: true },
+    contactNumber: { type: String, required: true },
+  },
+  socialLinks: {
+    website: { type: String, required: false },
+    facebook: { type: String, required: false },
+    instagram: { type: String, required: false },
+    twitter: { type: String, required: false },
+    youtube: { type: String, required: false },
+  },
+  location: {
+    address: { type: String, required: true },
+    district: { type: String, required: true },
+    state: { type: String, required: true },
+    country: { type: String, required: true },
+    pincode: { type: String, required: true },
+  },
+  contact: {
+    phone: { type: String, required: true },
+    email: { type: String, required: false },
+    website: { type: String, required: false },
+  },
+  messType: { type: String, enum: ["Veg", "Non-Veg", "Both"], required: true },
+  cuisine: { type: String, required: true },
+  seatingCapacity: { type: Number, required: false },
+  messImage: { type: String, required: false },
+  foodAvailability: {
+    type: { type: Number, enum: [1, 2, 3], required: true }, 
+    options: [
+      {
+        type: String,
+        enum: ["Breakfast", "Lunch", "Dinner"],
+        required: true,
+      },
+    ],
+  },
+  pricing: {
+    currency: { type: String, required: true, default: "INR" },
+    singleMealPrice: { type: Number, required: true },
+    doubleMealPrice: { type: Number, required: true },
+    tripleMealPrice: { type: Number, required: true },
+  },
+  menu: {
+    monday: {
+      breakfast: [{ itemName: String, price: Number, imageUrl: String }],
+      lunch: [{ itemName: String, price: Number, imageUrl: String }],
+      dinner: [{ itemName: String, price: Number, imageUrl: String }],
+    },
+    tuesday: {
+      breakfast: [{ itemName: String, price: Number, imageUrl: String }],
+      lunch: [{ itemName: String, price: Number, imageUrl: String }],
+      dinner: [{ itemName: String, price: Number, imageUrl: String }],
+    },
+    wednesday: {
+      breakfast: [{ itemName: String, price: Number, imageUrl: String }],
+      lunch: [{ itemName: String, price: Number, imageUrl: String }],
+      dinner: [{ itemName: String, price: Number, imageUrl: String }],
+    },
+    thursday: {
+      breakfast: [{ itemName: String, price: Number, imageUrl: String }],
+      lunch: [{ itemName: String, price: Number, imageUrl: String }],
+      dinner: [{ itemName: String, price: Number, imageUrl: String }],
+    },
+    friday: {
+      breakfast: [{ itemName: String, price: Number, imageUrl: String }],
+      lunch: [{ itemName: String, price: Number, imageUrl: String }],
+      dinner: [{ itemName: String, price: Number, imageUrl: String }],
+    },
+    saturday: {
+      breakfast: [{ itemName: String, price: Number, imageUrl: String }],
+      lunch: [{ itemName: String, price: Number, imageUrl: String }],
+      dinner: [{ itemName: String, price: Number, imageUrl: String }],
+    },
+    sunday: {
+      breakfast: [{ itemName: String, price: Number, imageUrl: String }],
+      lunch: [{ itemName: String, price: Number, imageUrl: String }],
+      dinner: [{ itemName: String, price: Number, imageUrl: String }],
+    },
+  },
+  openingHours: {
+    monday: { type: String, required: true },
+    tuesday: { type: String, required: true },
+    wednesday: { type: String, required: true },
+    thursday: { type: String, required: true },
+    friday: { type: String, required: true },
+    saturday: { type: String, required: true },
+    sunday: { type: String, required: true },
+  },
+  paymentOptions: {
+    acceptsCash: { type: Boolean, default: true },
+    acceptsOnlinePayment: { type: Boolean, default: false },
+    upiId: { type: String, required: false },
+  },
+  createdAt: { type: Date, default: Date.now },
+});
+
+const Mess = mongoose.model('Mess', messSchema);
+
+module.exports = Mess;

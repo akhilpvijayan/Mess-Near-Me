@@ -1,24 +1,33 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-searchbar></ion-searchbar>
-  <ion-searchbar placeholder="Custom Placeholder"></ion-searchbar>
-  <ion-searchbar disabled="true" placeholder="Disabled"></ion-searchbar>
-  <ion-searchbar value="Value"></ion-searchbar>
-  <ion-searchbar animated="true" placeholder="Animated"></ion-searchbar>
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<div class="container">
+  <!-- Location Search Bar -->
+  <div class="search-container">
+      <input type="text" id="locationSearch" placeholder="Enter location to find messes..." />
+      <button id="searchButton">Search</button>
   </div>
-</ion-content>
+  <header class="header" id="header">
+    <nav class="navbar container">
+      <a href="./index.html" class="brand">Brand</a>
+      <div class="menu" id="menu">
+        <ul class="menu-list">
+          <li class="menu-item">
+            <a href="#" class="menu-link is-active">
+              <i class="fa fa-home"></i>
+              <span class="menu-name">Home</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="#" class="menu-link">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+              <span class="menu-name">Search</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="#" class="menu-link">
+              <i class="fa-solid fa-heart"></i>
+              <span class="menu-name">Favorite</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
